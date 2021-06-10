@@ -1,0 +1,44 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'home'
+    var id_page = 'flat-page'
+    var class_page = 'home'
+    var breadcrumbsBtn = 'filter'
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= 'Urbanist'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+block content
+  .content
+    .vector.vector-main
+      .vector__rounded
+    .container
+      main.main 
+        h1.main__header URBANIST —
+          span.main__header_light  комфорт в усьому і нічого зайвого!
+        .main__desc
+          .main__desc_text Для тих, хто обирає життя в центрі подій, легкість пересування, нові технології та подорожі.
+          a.link__btn(href="about.html") Про проєкт
+        a.main__webcam(href="webcam.html")
+          +img('webcam.svg').main__webcam_icon
+          p.main__webcam_text веб камера
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
